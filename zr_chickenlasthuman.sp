@@ -5,7 +5,6 @@
 #include <sdkhooks>
 
 #include <zombiereloaded>
-#include <smlib>
 
 #define PL_VERSION "1.1"
 
@@ -168,4 +167,10 @@ public Action:ShouldHide(ent, client)
 		return Plugin_Handled;
 	
 	return Plugin_Continue;
+}
+
+stock Entity_SetParent(entity, parent)
+{
+	SetVariantString("!activator");
+	AcceptEntityInput(entity, "SetParent", parent);
 }
