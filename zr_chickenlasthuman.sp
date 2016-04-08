@@ -6,7 +6,7 @@
 
 #include <zombiereloaded>
 
-#define PL_VERSION "1.1"
+#define PL_VERSION "1.1.1"
 
 new bool:hecho = false;
 
@@ -144,6 +144,7 @@ stock ThrowChicken(Float:vSpawnPos[3],client)
 	SetEntProp(chickent, Prop_Data, "m_takedamage", 0, 1);
 	//SetEntData(chickent, g_offsCollisionGroup, 2, 4, true);
 	SetEntProp(chickent, Prop_Send, "m_bShouldGlow", true, true);
+	SetEntPropFloat(chickent, Prop_Send, "m_flGlowMaxDist", 10000000.0);
 	SetEntPropFloat(chickent, Prop_Send, "m_flModelScale", 5.0);
 	SDKHook(chickent, SDKHook_SetTransmit, ShouldHide);
 	gallina = EntIndexToEntRef(chickent);
